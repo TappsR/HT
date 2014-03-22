@@ -298,13 +298,13 @@ function toggleControls() {
           var token = "T1==cGFydG5lcl9pZD00NDY5NjE2MiZzZGtfdmVyc2lvbj10YnJ1YnktdGJyYi12MC45MS4yMDExLTAyLTE3JnNpZz05YTlkYWU3ZmJhYTFiNzcyNzVjNmY3MTIxNjczNjFjMzkxMWE3ZWYyOnJvbGU9cHVibGlzaGVyJnNlc3Npb25faWQ9Ml9NWDQwTkRZNU5qRTJNbjUtVTJGMElFMWhjaUF5TWlBeE1qb3dPRG95TmlCUVJGUWdNakF4Tkg0d0xqQTBOemsyT0RZeU5uNCZjcmVhdGVfdGltZT0xMzk1NTE1MzA2Jm5vbmNlPTAuNDY2NDk4MjczOTAzNjY5MTYmZXhwaXJlX3RpbWU9MTM5NTYwMTcwNyZjb25uZWN0aW9uX2RhdGE9";
 
           // Initialize session, set up event listeners, and connect
-          var session = TB.initSession(sessionId);
-          session.addEventListener('sessionConnected', sessionConnectedHandler);
-          session.connect(apiKey, token);
+          // var session = TB.initSession(sessionId);
+          // session.addEventListener('sessionConnected', sessionConnectedHandler);
+          // session.connect(apiKey, token);
           
-          function sessionConnectedHandler(event) {
-            var publisher = TB.initPublisher(apiKey, 'myPublisherDiv');
-            session.publish(publisher);
+          // function sessionConnectedHandler(event) {
+          //   var publisher = TB.initPublisher(apiKey, 'myPublisherDiv');
+          //   session.publish(publisher);
           }
         </script>
 
