@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>HealthyTapps | Med Management</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+ <!-- Latest compiled and minified CSS BS 3.0.  -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <!-- <link href="css/jquery.mCustomScrollbar.css" rel="stylesheet"> -->
+    <link href="css/bootstrap-dialog.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet"> 
+    <script src='https://swww.tokbox.com/webrtc/v2.0/js/TB.min.js'></script>
+    <script type="text/javascript">
+          function playSound(el,soundfile) {
+              if (el.mp3) {
+                  if(el.mp3.paused) el.mp3.play();
+                  else el.mp3.pause();
+              } else {
+                  el.mp3 = new Audio(soundfile);
+                  el.mp3.play();
+              }
+          }
+      </script>
+
+</head>
+
+
+  <body>
+
+<div class="container">
+  <!-- NAVBAR-->
+    <!-- Fixed navbar -->
+     <!--  <div class="navbar ">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">HealthyTapps</a>
+          </div>
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li class="dropdown-header">Nav header</li>
+                  <li><a href="#">Separated link</a></li>
+                  <li><a href="#">One more separated link</a></li>
+                </ul>
+              </li>
+            </ul> -->
+          <!-- </div>/.nav-collapse  -->
+        <!-- </div> -->
+      <!-- </div> -->
+</div>
+    
+    <div class="container">
+        <div class="row" >
+            <div class="col-sm-12 col-md-12 col-lg-12" style="margin-bottom:10px">
+                <img class="img-responsive pull-right" style="height:60px"  src="images/BlueOwl.jpg" alt="">  
+                <h2 style="color:navy;margin-right:.2em"class="pull-right" >HealthyTapps</h2> 
+            </div>
+        </div>
+
+        <div class="row" >
+            <div class="col-sm-12 col-md-12 col-lg-12" style="height:60px;">
+                    <div class="thumbnail">
+                    <img class="img-responsive" src="images/nyptoolbar.png" alt="image">
+                  </div>
+            </div>
+        </div>
+
+
+        <div style="background-color:#91b4b1;height:.1em"></div>
+  
+        <div class="row dropSha"  >
+            <div id="sch0" class="col-sm-8 col-md-8 col-lg-8" style="height:18em;background-color:#ffffe5"></div>
+
+             <div class="col-sm-4 col-md-4 col-lg-4" style="height:18em;background-color:#2F5A5A;color:white;">
+                
+                  <div class="row">  
+                   <p><span style="background-color:#fffffc;color:#660C16;font-size:1.5em;"> &nbsp NYP Voice &nbsp  </span> </p>
+                  </div>
+                 
+                     <!--  <p> Welcome to NYP Hospital, You currently have no new messages.</p> -->
+                   <div class="hide" id="myPublisherDiv"></div> 
+                
+                <div class="butList">  
+                <button id ="mod_1" class=" btn pull-right"> Talk</button>
+                <button id ="mod_2" class="btn pull-left"> Talk Now</button> </div>
+              </div>
+
+        </div>
+        <div style="background-color:#91b4b1;height:.1em"></div>  
+        <br>    
+
+
+        <div class="row" >
+             <div class="col-sm-12 col-md-12 col-lg-12" style="height:80px">
+            
+                <div class="row" >
+                    <div class="col-sm-2 col-md-4 col-lg-4" >
+                      <h4 style ="color:orange" class="pull-right"> Quick Access Buttons: </h4>
+                    </div>
+                    
+                     <div class="col-sm-5 col-md-4 col-lg-4" >
+                      <button id ="OTCMed_C"     class="btn btn-warning btn-circle btn-lg" style="margin: 0 5px">A</button> 
+                      <button id ="RxMedSimple_C" class="btn btn-warning btn-circle btn-lg" style="margin: 0 5px">B</button>
+                      <button id ="RxMed_C"       class="btn btn-warning btn-circle btn-lg" style="margin: 0 5px">C</button>
+                    </div>
+
+                    <div class="col-sm-5 col-md-4 col-lg-4" style="margin-top: -0.8em">
+                      <span id="dummy" onclick="playSound(this,'sounds/choc_heb.mp3');">
+                          <button class="btn btn-info btn-lg btn3d" >Listen to Discharge Report</button>
+
+                      </span>
+                    </div>
+                 </div>
+            </div>
+
+        </div>
+
+        <div style="background-color:#91b4b1;height:.1em"></div>  
+
+
+
+        <div class="row " > 
+    
+      <!-- left SIDE-->   
+            <div class=" dropSha col-xs-4 col-sm-4 col-md-4 col-lg-4" style="background-color:#ffffe5;">         
+              <div id="left-side-menu"  >  
+                <div >
+                    <div class="">
+                        <ul class="" style="background-color:#2F5A5A;height:40px;color:white;">
+                          <li class="" style="list-style:none;font-size:1.2em;padding:.3em" id="viewRec" >View Records</li>
+                          <!-- <li class="" style="font-size:18px" id="humour" ><a href="#2" data-toggle="tab">Humour</a></li> -->
+                        </ul>
+                        <div class="tab-content" id="sidebarContent" ></div>    
+                    
+                    </div>
+                 </div>      
+              </div>
+            <!-- /left SIDE--> 
+           </div>
+
+            <!-- CONTENT SIDE-->
+            <div class="  col-xs-8 col-sm-8 col-md-8 col-lg-8">
+
+                <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
+                   <h4 id="medinfoTitle"> Your Medical Information:</h4> 
+
+                  </div>
+                </div>
+
+                <div class="row" > 
+                    <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12" style="background-color:#FFFFFC;margin:.3em; margin-bottom:1em" id="medinfo"></div>
+                </div> <!--   mainContent -->
+                <div style="background-color:#91b4b1;height:.2em"></div>  
+            </div>
+    
+        </div>
+
+        <div style="background-color:#91b4b1;height:.1em"></div>  
+        <!-- FOOTER-->
+        <footer>
+                <div class="row">
+                  <div class="col-sm-12 col-md-12 col-lg-12" >
+                        <p>2014 © HealthyTapps </p>
+                  </div>
+                </div>  
+        </footer>
+
+
+    </div> <!-- /container -->
+
+        <script src="js/jquery.js" type="text/javascript"></script>
+        <script src="js/bootstrap.js"></script>
+<!-- <script src="js/jquery.localscroll-1.2.7-min.js" type="text/javascript"></script> -->
+<!-- <script src="js/jquery.scrollTo-1.4.3.1-min.js" type="text/javascript"></script> -->
+        <script src="js/jquery.mousewheel.min.js" type="text/javascript"></script>
+<!-- <script src="js/jquery.mCustomScrollbar.min.js" type="text/javascript"></script> -->
+        <script src="js/bootstrap-dialog.min.js"></script>
+        <link href="js/moment.js" > 
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+
+
+<!-- <video id="myvideo">
+  <source src="sounds/single.mp3" />
+</video> -->
+
+<!-- <p onclick="toggleControls();"> Video on/off</p> -->
+
+
+<script>
+    // var nav = jQuery('#left-side-menu');
+    // jQuery(window).scroll(function () {
+        // if (jQuery(this).scrollTop() > 10) {
+          // nav.addClass("fixed-top");  
+        // } else {
+          // nav.removeClass("fixed-top"); 
+        // }
+      // })
+
+
+         $(function() {
+            // $.get("views/sidebar.html",function(data){
+            //  $("#sidebarContent").append(data); 
+            //  });
+            $("#sch0"          ).load("views/sch0.html");
+            $("#sidebarContent").load("views/sidebar.html");
+             });
+
+            $("#mod_2").click(function () {
+              $("#myPublisherDiv").toggleClass("show");
+            });
+        
+              $("#mod_1").click(function () {
+              // var $textAndPic = $('<div id="myPublisherDiv"></div>');
+              // $textAndPic.load("views/livevideo.html");
+                var $textAndPic = $('<video id="myvideo"></video>');
+
+
+
+            BootstrapDialog.show({
+              // size: BootstrapDialog.SIZE_LARGE,
+              title: 'Live Streams',
+              message:  $textAndPic,
+              draggable: true,
+              type: BootstrapDialog.TYPE_PRIMARY,
+              buttons: [
+                {label      : 'Drop Feed',
+                 action     : function(){
+                                $textAndPic.empty();  
+                                }
+                 }, 
+                {label      : 'Button 1',
+                 cssClass   : 'btn-primary',
+                 action     : function(){
+                                $textAndPic.append("<source src='sounds/single.mp3'/>");
+                                toggleControls();
+                                // alert("There is No one on-line right now!")
+                                }
+                              }, 
+                {label      : 'Button 3',
+                 action     : function(){
+                                $textAndPic.append("<source src='sounds/single.mp3'/>");
+                                toggleControls();
+                                // alert("There is No one on-line right now!")
+                                },
+                 cssClass   : 'btn-warning'}, 
+                {label      : 'Close',
+                 action     : function(dialogItself){
+                                dialogItself.close();}
+                }]
+            });
+
+        });
+ 
+</script>
+
+
+<script>
+var video = document.getElementById("myvideo");
+
+function toggleControls() {
+  if (video.hasAttribute("controls")) {
+     video.removeAttribute("controls")   
+  } else {
+     video.setAttribute("controls","controls")   
+  }
+}
+</script>
+
+
+        <script type="text/javascript">
+          // Initialize API key, session, and token...
+          // Think of a session as a room, and a token as the key to get in to the room
+          // Sessions and tokens are generated on your server and passed down to the client
+          var apiKey = "44696162";
+          var sessionId = "2_MX40NDY5NjE2Mn5-U2F0IE1hciAyMiAxMjowODoyNiBQRFQgMjAxNH4wLjA0Nzk2ODYyNn4";
+          var token = "T1==cGFydG5lcl9pZD00NDY5NjE2MiZzZGtfdmVyc2lvbj10YnJ1YnktdGJyYi12MC45MS4yMDExLTAyLTE3JnNpZz05YTlkYWU3ZmJhYTFiNzcyNzVjNmY3MTIxNjczNjFjMzkxMWE3ZWYyOnJvbGU9cHVibGlzaGVyJnNlc3Npb25faWQ9Ml9NWDQwTkRZNU5qRTJNbjUtVTJGMElFMWhjaUF5TWlBeE1qb3dPRG95TmlCUVJGUWdNakF4Tkg0d0xqQTBOemsyT0RZeU5uNCZjcmVhdGVfdGltZT0xMzk1NTE1MzA2Jm5vbmNlPTAuNDY2NDk4MjczOTAzNjY5MTYmZXhwaXJlX3RpbWU9MTM5NTYwMTcwNyZjb25uZWN0aW9uX2RhdGE9";
+
+          // Initialize session, set up event listeners, and connect
+          var session = TB.initSession(sessionId);
+          session.addEventListener('sessionConnected', sessionConnectedHandler);
+          session.connect(apiKey, token);
+          
+          function sessionConnectedHandler(event) {
+            var publisher = TB.initPublisher(apiKey, 'myPublisherDiv');
+            session.publish(publisher);
+          }
+        </script>
+
+<!--This function integrated in bootstrap_mode_blogalt.js line 1835
+<script>
+    (function($){
+        $(window).load(function(){
+            $(".tab-pane").mCustomScrollbar();  
+
+
+        });
+    })(jQuery);
+</script>
+-->
+
+</body>
+</html>

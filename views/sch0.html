@@ -1,0 +1,116 @@
+       
+
+<script type="text/javascript">
+    
+
+$(document).ready(function() {
+ 
+    $(window).on('focus', function(event) {
+        $('.show-focus-status > .alert-danger').addClass('hidden');
+        $('.show-focus-status > .alert-success').removeClass('hidden');
+    }).on('blur', function(event) {
+        $('.show-focus-status > .alert-success').addClass('hidden');
+        $('.show-focus-status > .alert-danger').removeClass('hidden');
+    });    
+    
+    $('.date-picker').each(function () {
+        var $datepicker = $(this),
+            cur_date = ($datepicker.data('date') ? moment($datepicker.data('date'), "YYYY/MM/DD") : moment()),
+            format = {
+                "weekday" : ($datepicker.find('.weekday').data('format') ? $datepicker.find('.weekday').data('format') : "dddd"),                
+                "date" : ($datepicker.find('.date').data('format') ? $datepicker.find('.date').data('format') : "MMMM Do"),
+            };
+
+        function updateDisplay(cur_date) {    
+            $datepicker.find('.date-container > .weekday').text(cur_date.format(format.weekday));
+            $datepicker.find('.date-container > .date').text(cur_date.format(format.date));
+            $datepicker.find('.date-container > .year').text(cur_date.format(format.year));
+            $datepicker.data('date', cur_date.format('YYYY/MM/DD'));
+            $datepicker.find('.input-datepicker').removeClass('show-input');
+        }
+        
+        updateDisplay(cur_date);
+
+        $datepicker.on('click', '[data-toggle="calendar"]', function(event) {
+            event.preventDefault();
+            $datepicker.find('.input-datepicker').toggleClass('show-input');
+        });
+
+        $datepicker.on('click', '.input-datepicker > .input-group-btn > button', function(event) {
+            event.preventDefault();
+            var $input = $(this).closest('.input-datepicker').find('input'),
+                date_format = ($input.data('format') ? $input.data('format') : "YYYY/MM/DD");
+            if (moment($input.val(), date_format).isValid()) {
+               updateDisplay(moment($input.val(), date_format));
+            }else{
+                alert('Invalid Date');
+            }
+        });
+        
+        $datepicker.on('click', '[data-toggle="datepicker"]', function(event) {
+            event.preventDefault();
+            
+            var cur_date = moment($(this).closest('.date-picker').data('date'), "YYYY/MM/DD"),
+                date_type = ($datepicker.data('type') ? $datepicker.data('type') : "days"),
+                type = ($(this).data('type') ? $(this).data('type') : "add"),
+                amt = ($(this).data('amt') ? $(this).data('amt') : 1);
+                
+            if (type == "add") {
+                cur_date = cur_date.add(date_type, amt);
+            }else if (type == "subtract") {
+                cur_date = cur_date.subtract(date_type, amt);
+            }
+            
+            updateDisplay(cur_date);
+        });
+        
+        if ($datepicker.data('keyboard') == true) {
+            $(window).on('keydown', function(event) {
+                if (event.which == 37) {
+                    $datepicker.find('span:eq(0)').trigger('click');  
+                }else if (event.which == 39) {
+                    $datepicker.find('span:eq(1)').trigger('click'); 
+                }
+            });
+        }
+        
+    });
+});
+
+</script>
+
+<div class="row"  style="margin-top:10px" >
+ <div class="col-sm-7 col-md-7 col-lg-7">
+  
+    <div class="date-picker"  data-date="2014/09/02" data-keyboard="true">
+        <div class="date-container pull-left">
+            <h4 class="weekday">&nbsp</h4>
+            <h2 class="date" style="color:black;">Sun, Mar 16th </h2>
+            <h4 >&nbsp</h4>
+        </div>
+          <div style="color:#2F5A5A;height:6px"></div>     
+        <span data-toggle="datepicker" data-type="subtract" class="fa fa-angle-left"  style="color: #74908d"></span>
+        <span data-toggle="datepicker" data-type="add"      class="fa fa-angle-right" style="color: #74908d"></span>
+        <div class="input-group input-datepicker">
+            <input type="text" class="form-control" data-format="YYYY/MM/DD" placeholder="YYYY/MM/DD">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Go!</button>
+            </span>
+        </div>
+        <span data-toggle="calendar" class="fa fa-calendar"></span>
+     
+    </div>
+    <div style="background-color:#91b4b1;height:.1em"></div>  
+    </div>
+    <div class="col-sm-5 col-md-5 col-lg-5"> </div>
+
+</div>
+    <div class="row">
+        <div style="margin-left:40px;" >
+            <h4> Eat Breakfast</h4>
+            <h4> Go for a walk </h4>
+            <h4> Go to Hospital with BM </h4>
+            <h4> PT Session Morning and Afternoon </h4>
+        </div>
+    </div>
+        
