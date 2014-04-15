@@ -73,8 +73,8 @@
     <div class="container">
         <div class="row" >
             <div class="col-sm-12 col-md-12 col-lg-12" style="margin-bottom:10px">
-                <img class="img-responsive pull-right" style="height:60px"  src="images/BlueOwl.jpg" alt="">  
-                <h2 style="color:navy;margin-right:.2em"class="pull-right" >HealthyTapps</h2> 
+                <img class="img-responsive pull-left" style="height:60px"  src="images/BlueOwl.jpg" alt="">  
+                <h2 style="color:navy;margin-right:.2em"class="pull-left" >HealthyTapps</h2> 
             </div>
         </div>
 
@@ -163,10 +163,10 @@
             <div class="  col-xs-8 col-sm-8 col-md-8 col-lg-8">
 
                 <div class="row">
-                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
+                  <!-- <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
                    <h4 id="medinfoTitle"> Your Medical Information:</h4> 
 
-                  </div>
+                  </div> -->
                 </div>
 
                 <div class="row" > 
@@ -223,12 +223,14 @@
             // $.get("views/sidebar.html",function(data){
             //  $("#sidebarContent").append(data); 
             //  });
-            $("#sch0"          ).load("views/sch0.html");
-            $("#sidebarContent").load("views/sidebar.html");
+            $("#sch0"            ).load("views/sch0.html");
+            $("#sidebarContent"  ).load("views/sidebar.html");
+            $("#medinfo").html("").load("views/main.html").css("border","1px solid black");;
              });
 
             $("#mod_2").click(function () {
               $("#myPublisherDiv").toggleClass("show");
+              // alert(12343)
             });
         
               $("#mod_1").click(function () {
@@ -298,13 +300,13 @@ function toggleControls() {
           var token = "T1==cGFydG5lcl9pZD00NDY5NjE2MiZzZGtfdmVyc2lvbj10YnJ1YnktdGJyYi12MC45MS4yMDExLTAyLTE3JnNpZz05YTlkYWU3ZmJhYTFiNzcyNzVjNmY3MTIxNjczNjFjMzkxMWE3ZWYyOnJvbGU9cHVibGlzaGVyJnNlc3Npb25faWQ9Ml9NWDQwTkRZNU5qRTJNbjUtVTJGMElFMWhjaUF5TWlBeE1qb3dPRG95TmlCUVJGUWdNakF4Tkg0d0xqQTBOemsyT0RZeU5uNCZjcmVhdGVfdGltZT0xMzk1NTE1MzA2Jm5vbmNlPTAuNDY2NDk4MjczOTAzNjY5MTYmZXhwaXJlX3RpbWU9MTM5NTYwMTcwNyZjb25uZWN0aW9uX2RhdGE9";
 
           // Initialize session, set up event listeners, and connect
-          // var session = TB.initSession(sessionId);
-          // session.addEventListener('sessionConnected', sessionConnectedHandler);
-          // session.connect(apiKey, token);
+          var session = TB.initSession(sessionId);
+          session.addEventListener('sessionConnected', sessionConnectedHandler);
+          session.connect(apiKey, token);
           
           // function sessionConnectedHandler(event) {
-          //   var publisher = TB.initPublisher(apiKey, 'myPublisherDiv');
-          //   session.publish(publisher);
+            var publisher = TB.initPublisher(apiKey, 'myPublisherDiv');
+            session.publish(publisher);
           }
         </script>
 

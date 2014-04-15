@@ -125,68 +125,68 @@
 <script>
 
         $("#viewRec").click(function () {
-               $("#medinfo").html("").css("border","none");
-                $("#medinfoTitle").html("Your Medical Information");
+               $("#medinfo").html("").load("views/main.html").css("border","1px solid black");;
+                // $("#medinfoTitle").html("Your Medical Information");
         });
 
         $("#OTCMed").click(function () {
                $("#medinfo").empty().load("views/otc.html").css("border","1px solid black");
-               $("#medinfoTitle").html(" OTC Medicines You Reported");
+               // $("#medinfoTitle").html(" OTC Medicines You Reported");
 
         });
     
         $("#OTCMed_C").click(function () {
               $("#medinfo").empty().load("views/otc.html").css("border","1px solid black");
-               $("#medinfoTitle").html(" OTC Medicines You Reported");
+               // $("#medinfoTitle").html(" OTC Medicines You Reported");
         });
 
 
         $("#RxMedSimple ").click(function () {
               $("#medinfo").empty().load("views/sch1.html").css("border","1px solid black");
-               $("#medinfoTitle").html("Your Simple Medical Schedule");
+               // $("#medinfoTitle").html("Your Simple Medical Schedule");
         });
 
         $("#RxMedSimple_C ").click(function () {
               $("#medinfo").empty().load("views/sch1.html").css("border","1px solid black");
-              $("#medinfoTitle").html("Your Simple Medical Schedule");
+              // $("#medinfoTitle").html("Your Simple Medical Schedule");
         });
 
         $("#RxMed").click(function () {
               $("#medinfo").empty().load("views/sch2.html").css("border","1px solid black");
-               $("#medinfoTitle").html("Your Visual Medical Schedule");
+               // $("#medinfoTitle").html("Your Visual Medical Schedule");
         });
         
         $("#RxMed_C").click(function () {
              $("#medinfo").empty().load("views/sch2.html").css("border","1px solid black");
-              $("#medinfoTitle").html("Your Visual Medical Schedule");
+              // $("#medinfoTitle").html("Your Visual Medical Schedule");
         });
 
         $("#MedBills").click(function () {
            $("#medinfo").empty().load("views/bills.html").css("border","1px solid black");
-            $("#medinfoTitle").html("Your Medical Bills You Reported");
+            // $("#medinfoTitle").html("Your Medical Bills You Reported");
         });
 
         $("#VoiceRecording").click(function () {  
               $("#medinfo").empty().load("views/voice.html").css("border","1px solid black");
-               $("#medinfoTitle").html("Voice Recordings of Medical Instructions");
+               // $("#medinfoTitle").html("Voice Recordings of Medical Instructions");
         });
         $("#Pictures").click(function () {
             $("#medinfo").empty().load("views/pictures.html").css("border","1px solid black");
-             $("#medinfoTitle").html("Your Medical Pictures");
+             // $("#medinfoTitle").html("Your Medical Pictures");
         });
 
         $("#Insurance").click(function () {
             $("#medinfo").empty().load("views/insurance.html").css("border","1px solid black");
-             $("#medinfoTitle").html("Your Insurance Information");
+             // $("#medinfoTitle").html("Your Insurance Information");
         });
          $("#Video").click(function () {
             $("#medinfo").empty().load("views/videos.html").css("border","1px solid black");
-             $("#medinfoTitle").html("Helpful Medical Videos");
+             // $("#medinfoTitle").html("Helpful Medical Videos");
         });
 
         $("#Miscellaneous").click(function () {
              $("#Miscellaneous2").toggleClass("show").css("border","1px solid black");
-              $("#medinfoTitle").html("Miscellaneous Information");
+              // $("#medinfoTitle").html("Miscellaneous Information");
       
         });
     
