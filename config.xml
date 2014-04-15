@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="org.dowhat.HealthyTapps" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>lwo</name>
+    <description>
+        A 
+    </description>
+    <author email="dev@home.org" href="http://www.homw.com">
+        lwo
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+</widget>
